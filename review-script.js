@@ -19,6 +19,6 @@ function fetchAndUpdateReviewCount() {
 //   document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
 console.log("review loaded");
 
-fetchAndUpdateReviewCount();
+// fetchAndUpdateReviewCount();
 
 console.log("review executed");
