@@ -54,4 +54,4 @@ window.addEventListener("load", function () {
     }
   }
   console.log("Copyright Script ran");
-})();
+});
