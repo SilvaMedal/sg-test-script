@@ -16,4 +16,4 @@ function fetchAndUpdateReviewCount() {
 }
 
 // Fetch the review count when the page loads
-document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
+// document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
