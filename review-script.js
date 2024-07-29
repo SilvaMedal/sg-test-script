@@ -1,8 +1,3 @@
-// function init() {
-//   console.log("init called");
-//   fetchAndUpdateReviewCount();
-// }
-
 function fetchAndUpdateReviewCount() {
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
   var apiUrl =
@@ -19,6 +14,11 @@ function fetchAndUpdateReviewCount() {
     })
     .catch((error) => console.error("Error fetching review count:", error));
 }
+
 // Fetch the review count when the page loads
 //   document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
+console.log("review loaded");
+
 fetchAndUpdateReviewCount();
+
+console.log("review executed");
