@@ -19,4 +19,3 @@
   //   document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
   //   fetchAndUpdateReviewCount();
 })();
-console.log("Review script");
