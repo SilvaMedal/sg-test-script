@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
   // Check if the current pathname is the home page "/"
   if (window.location.pathname === "/") {
     // Function to find all FAQ schema scripts and merge them
@@ -45,4 +45,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Execute the merging function
     mergeFAQSchemas();
   }
-});
+})();
