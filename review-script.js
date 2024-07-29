@@ -1,10 +1,10 @@
 (function fetchAndUpdateReviewCount() {
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
-  // var placeId = document
-  //   .getElementById("masterScript")
-  //   .getAttribute("review-place-id");
-  // var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/${placeId}`;
-  var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/PLACE-ID`;
+  var placeId = document
+    .getElementById("masterScript")
+    .getAttribute("review-place-id");
+  var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/${placeId}`;
+
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
