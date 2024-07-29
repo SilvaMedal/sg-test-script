@@ -56,11 +56,11 @@ window.addEventListener("load", function () {
   //   fetchAndUpdateReviewCount();
 })();
 
-// Check if the current pathname is the home page "/"
-(function faq() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the current pathname is the home page "/"
   if (window.location.pathname === "/") {
     // Function to find all FAQ schema scripts and merge them
-    try {
+    function mergeFAQSchemas() {
       // Get all script tags with type "application/ld+json"
       const scripts = document.querySelectorAll(
         'script[type="application/ld+json"]'
@@ -98,11 +98,9 @@ window.addEventListener("load", function () {
       newScript.type = "application/ld+json";
       newScript.text = JSON.stringify(combinedFAQSchema);
       document.head.appendChild(newScript);
-    } catch {
-      console.log("error");
     }
 
     // Execute the merging function
-    //   mergeFAQSchemas();
+    mergeFAQSchemas();
   }
-})();
+});
