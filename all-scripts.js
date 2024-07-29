@@ -19,6 +19,6 @@
   // Fetch the review count when the page loads
   //   document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
   console.log("review loaded in all-scripts");
-  fetchAndUpdateReviewCount();
+  //   fetchAndUpdateReviewCount();
   console.log("review executed in all-scripts");
 })();
