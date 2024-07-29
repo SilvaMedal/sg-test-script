@@ -1,6 +1,10 @@
 function init() {
   console.log("init called");
-  fetchAndUpdateReviewCount;
+  try {
+    fetchAndUpdateReviewCount();
+  } catch {
+    console.log("Error23");
+  }
 }
 
 function fetchAndUpdateReviewCount() {
