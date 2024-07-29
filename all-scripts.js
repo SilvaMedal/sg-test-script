@@ -1,6 +1,5 @@
-(function () {
+(function fetchAndUpdateReviewCount() {
   //   function fetchAndUpdateReviewCount() {
-  console.log("counter");
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
   var apiUrl =
     "https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/ChIJKU52QTV1K4cRXFVN9uo9Rg0";
@@ -18,7 +17,5 @@
   //   }
   // Fetch the review count when the page loads
   //   document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
-  console.log("review loaded in all-scripts");
   //   fetchAndUpdateReviewCount();
-  console.log("review executed in all-scripts");
 })();
