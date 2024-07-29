@@ -1,4 +1,5 @@
 function fetchAndUpdateReviewCount() {
+  console.log("review loaded");
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
   var apiUrl =
     "https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/ChIJKU52QTV1K4cRXFVN9uo9Rg0";
