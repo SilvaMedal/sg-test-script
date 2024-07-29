@@ -105,81 +105,89 @@
 //   }
 // });
 
+// (function() {
+//     // Debug: Initial script load
+//     console.log("all-scripts.js loaded");
+
+//     // Fetch and update review count
+//     function fetchAndUpdateReviewCount() {
+//       // Replace 'YOUR_PLACE_ID' with the actual PlaceID
+//       var placeId = document
+//         .getElementById("masterScript")
+//         .getAttribute("review-place-id");
+//       var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/${placeId}`;
+
+//       console.log("Fetching review count from API:", apiUrl);
+
+//       fetch(apiUrl)
+//         .then((response) => response.json())
+//         .then((data) => {
+//           console.log("Review count data received:", data);
+//           var reviewCount = data.review_count + "+";
+//           var reviewElements = document.querySelectorAll(".review-count");
+//           reviewElements.forEach(function (elem) {
+//             elem.innerText = reviewCount;
+//           });
+//         })
+//         .catch((error) => console.error("Error fetching review count:", error));
+//     }
+
+//     // Merge FAQ schemas if on the home page
+//     function mergeFAQSchemas() {
+//       console.log("mergeFAQSchemas function called.");
+//       // Get all script tags with type "application/ld+json"
+//       const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+//       let combinedFAQSchema = {
+//         "@context": "https://schema.org",
+//         "@type": "FAQPage",
+//         "mainEntity": []
+//       };
+
+//       // Loop through each script tag
+//       scripts.forEach(script => {
+//         try {
+//           const schema = JSON.parse(script.innerText);
+//           console.log("Found FAQ schema:", schema);
+
+//           // Check if the script contains FAQPage schema
+//           if (schema["@type"] === "FAQPage" && Array.isArray(schema.mainEntity)) {
+//             // Merge mainEntity arrays
+//             combinedFAQSchema.mainEntity = combinedFAQSchema.mainEntity.concat(schema.mainEntity);
+//             // Remove the original script tag to avoid duplicates
+//             script.remove();
+//           }
+//         } catch (e) {
+//           console.error("Failed to parse schema JSON:", e);
+//         }
+//       });
+
+//       // Create a new script tag for the combined FAQ schema
+//       const newScript = document.createElement('script');
+//       newScript.type = 'application/ld+json';
+//       newScript.text = JSON.stringify(combinedFAQSchema);
+//       document.head.appendChild(newScript);
+//       console.log("Combined FAQ schema added to the head:", combinedFAQSchema);
+//     }
+
+//     // Execute functions when the DOM is fully loaded
+//     document.addEventListener("DOMContentLoaded", function() {
+//       console.log("DOMContentLoaded event fired.");
+//       fetchAndUpdateReviewCount();
+
+//       // Check if the current pathname is the home page "/"
+//       if (window.location.pathname === "/") {
+//         console.log("Current pathname is '/'. Executing mergeFAQSchemas.");
+//         mergeFAQSchemas();
+//       } else {
+//         console.log("Current pathname is not '/'. mergeFAQSchemas will not be executed.");
+//       }
+//     });
+//   })();
+
 (function () {
-  // Fetch and update review count
-  function fetchAndUpdateReviewCount() {
-    // Replace 'YOUR_PLACE_ID' with the actual PlaceID
-    var placeId = document
-      .getElementById("masterScript")
-      .getAttribute("review-place-id");
-    var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/${placeId}`;
+  console.log("Simple test script loaded");
 
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        var reviewCount = data.review_count + "+";
-        var reviewElements = document.querySelectorAll(".review-count");
-        reviewElements.forEach(function (elem) {
-          elem.innerText = reviewCount;
-        });
-      })
-      .catch((error) => console.error("Error fetching review count:", error));
-  }
-
-  // Merge FAQ schemas if on the home page
-  function mergeFAQSchemas() {
-    console.log("mergeFAQSchemas function called.");
-    // Get all script tags with type "application/ld+json"
-    const scripts = document.querySelectorAll(
-      'script[type="application/ld+json"]'
-    );
-    let combinedFAQSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [],
-    };
-
-    // Loop through each script tag
-    scripts.forEach((script) => {
-      try {
-        const schema = JSON.parse(script.innerText);
-        console.log("Found FAQ schema:", schema);
-
-        // Check if the script contains FAQPage schema
-        if (schema["@type"] === "FAQPage" && Array.isArray(schema.mainEntity)) {
-          // Merge mainEntity arrays
-          combinedFAQSchema.mainEntity = combinedFAQSchema.mainEntity.concat(
-            schema.mainEntity
-          );
-          // Remove the original script tag to avoid duplicates
-          script.remove();
-        }
-      } catch (e) {
-        console.error("Failed to parse schema JSON:", e);
-      }
-    });
-
-    // Create a new script tag for the combined FAQ schema
-    const newScript = document.createElement("script");
-    newScript.type = "application/ld+json";
-    newScript.text = JSON.stringify(combinedFAQSchema);
-    document.head.appendChild(newScript);
-    console.log("Combined FAQ schema added to the head:", combinedFAQSchema);
-  }
-
-  // Execute functions when the DOM is fully loaded
   document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOMContentLoaded event fired.");
-    fetchAndUpdateReviewCount();
-
-    // Check if the current pathname is the home page "/"
-    if (window.location.pathname === "/") {
-      console.log("Current pathname is '/'. Executing mergeFAQSchemas.");
-      mergeFAQSchemas();
-    } else {
-      console.log(
-        "Current pathname is not '/'. mergeFAQSchemas will not be executed."
-      );
-    }
+    console.log("Simple test DOMContentLoaded event fired.");
   });
 })();
