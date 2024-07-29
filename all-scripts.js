@@ -128,6 +128,7 @@
 
   // Merge FAQ schemas if on the home page
   function mergeFAQSchemas() {
+    console.log("mergeFAQSchemas function called.");
     // Get all script tags with type "application/ld+json"
     const scripts = document.querySelectorAll(
       'script[type="application/ld+json"]'
@@ -142,6 +143,7 @@
     scripts.forEach((script) => {
       try {
         const schema = JSON.parse(script.innerText);
+        console.log("Found FAQ schema:", schema);
 
         // Check if the script contains FAQPage schema
         if (schema["@type"] === "FAQPage" && Array.isArray(schema.mainEntity)) {
@@ -162,15 +164,22 @@
     newScript.type = "application/ld+json";
     newScript.text = JSON.stringify(combinedFAQSchema);
     document.head.appendChild(newScript);
+    console.log("Combined FAQ schema added to the head:", combinedFAQSchema);
   }
 
   // Execute functions when the DOM is fully loaded
   document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOMContentLoaded event fired.");
     fetchAndUpdateReviewCount();
 
     // Check if the current pathname is the home page "/"
     if (window.location.pathname === "/") {
+      console.log("Current pathname is '/'. Executing mergeFAQSchemas.");
       mergeFAQSchemas();
+    } else {
+      console.log(
+        "Current pathname is not '/'. mergeFAQSchemas will not be executed."
+      );
     }
   });
 })();
