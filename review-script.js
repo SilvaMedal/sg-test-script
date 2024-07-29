@@ -1,6 +1,6 @@
 function init() {
   console.log("init called");
-  fetchAndUpdateReviewCount();
+  fetchAndUpdateReviewCount;
 }
 
 function fetchAndUpdateReviewCount() {
