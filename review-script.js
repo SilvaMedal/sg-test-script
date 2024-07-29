@@ -1,7 +1,7 @@
-function init() {
-  console.log("init called");
-  fetchAndUpdateReviewCount();
-}
+// function init() {
+//   console.log("init called");
+//   fetchAndUpdateReviewCount();
+// }
 
 function fetchAndUpdateReviewCount() {
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
@@ -21,3 +21,4 @@ function fetchAndUpdateReviewCount() {
 }
 // Fetch the review count when the page loads
 // document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
+fetchAndUpdateReviewCount();
