@@ -15,6 +15,6 @@ function fetchAndUpdateReviewCount() {
     .catch((error) => console.error("Error fetching review count:", error));
 }
 console.log("In the review script");
-fetchAndUpdateReviewCount;
+fetchAndUpdateReviewCount();
 // Fetch the review count when the page loads
 // document.addEventListener("DOMContentLoaded", fetchAndUpdateReviewCount);
