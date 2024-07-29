@@ -1,7 +1,7 @@
 (function fetchAndUpdateReviewCount() {
   // Replace 'YOUR_PLACE_ID' with the actual PlaceID
   var placeId = document
-    .getElementById("reviewScript")
+    .getElementById("masterScript")
     .getAttribute("review-place-id");
   var apiUrl = `https://review-update-automation-3bbb074e12a3.herokuapp.com/get-review-count/${placeId}`;
 
